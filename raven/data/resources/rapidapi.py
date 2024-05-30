@@ -122,7 +122,7 @@ class rapidapi_wrapper(base_env):
 
         self.functions.append(finish_func)
         self.CALL_MAX_TIME = 3
-        self.task_description = f"""You should use functions to help handle the real time user querys. Remember:
+        self.task_description = """You should use functions to help handle the real time user querys. Remember:
 1.ALWAYS call \"Finish\" function at the end of the task. And the final answer should contain enough information to show to the user,If you can't handle the task, or you find that function calls always fail(the function is not valid now), use function Finish->give_up_and_restart.
 2.Do not use origin tool names, use only subfunctions' names.
 You have access of the following tools:\n"""
@@ -415,7 +415,7 @@ You have access of the following tools:\n"""
                             return (
                                 json.dumps(
                                     {
-                                        "error": f"request invalid, data error",
+                                        "error": "request invalid, data error",
                                         "response": "",
                                     }
                                 ),

@@ -210,7 +210,7 @@ def get_rapidapi_response(
             tool_input = {}
         else:
             print(f"Can not parse tool input into json: {tool_input}")
-            response_dict = {"error": f"Tool input parse error...\n", "response": ""}
+            response_dict = {"error": "Tool input parse error...\n", "response": ""}
             return response_dict
 
     input_params_str = ""
