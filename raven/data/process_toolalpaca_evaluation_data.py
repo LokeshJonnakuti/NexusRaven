@@ -16,8 +16,8 @@ from raven import ROOT_DIR
 class ToolAlpacaDataPostprocessHelper:
     def run(self) -> None:
         response = requests.get(
-            "https://raw.githubusercontent.com/tangqiaoyu/ToolAlpaca/main/data/eval_simulated.json"
-        )
+            "https://raw.githubusercontent.com/tangqiaoyu/ToolAlpaca/main/data/eval_simulated.json", 
+        timeout=60)
         content = response.content
 
         file = json.loads(content)
